@@ -1,4 +1,3 @@
-2025-02-06 17:04:41 [INFO] [test_driven_login] Test case to verify the forget link present on login page or not
-2025-02-06 17:04:46 [INFO] [test_driven_login] The 'Forgot Password' link is present in the page source.
-2025-02-06 17:04:46 [INFO] [screenshot] Screenshots directory already exists at: .\screenshots
-2025-02-06 17:04:46 [INFO] [screenshot] Screenshot saved at .\screenshots\test_forget_link_20250206-170446.png
+2025-02-07 11:49:20 [INFO] [ticketing] Test case to raise new ticket
+2025-02-07 11:49:33 [INFO] [ticketing] Navigation bar is visible as expected.
+2025-02-07 11:50:02 [INFO] [ticketing] File has been uploaded successfully
