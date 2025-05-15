@@ -142,7 +142,6 @@ class Test_Dashboard:
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.dashboard = Dash_board(self.driver)
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         active, inactive = self.dashboard.get_table_values()
 
         # Optional assertions or checks
