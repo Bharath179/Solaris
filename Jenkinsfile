@@ -17,7 +17,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                 bat 'pytest -s -v test_cases/dashboard1.py --html=reports\\test_report.html --self-contained-html'
+                 bat 'pytest -s -v test_cases/dashboard1.py --browser=chrome --html=reports\\test_report.html --self-contained-html'
             }
         }
     }
