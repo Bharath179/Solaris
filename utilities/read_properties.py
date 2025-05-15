@@ -1,6 +1,7 @@
 import configparser
 import os
 
+
 class Read_Config:
     config = configparser.RawConfigParser()
 
@@ -24,8 +25,8 @@ class Read_Config:
     @staticmethod
     def get_username():
         Read_Config.load_config()
-        username = Read_Config.config.get('common data', 'username')
-        return username
+        email = Read_Config.config.get('common data', 'email')
+        return email
 
     @staticmethod
     def get_password():

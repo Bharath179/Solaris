@@ -8,18 +8,18 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class Settings:
     navigation_bar_xpath = "//div[@class='group relative flex flex-col justify-between px-2 pb-4 h-screen']"
-    settings_bar_xpath="//p[text()='Settings']"
-    user_bar_xpath="//p[text()='User']"
-    new_user_xpath="(//button[@type='button'])[3]"
-    first_name_xpath="(//input[@type='text'])[1]"
-    last_name_xpath="(//input[@type='text'])[2]"
-    username_txt_field_xpath="(//input[@type='text'])[3]"
-    email_txt_field_xpath="(//input[@type='text'])[4]"
-    password_txt_field_xpath="(//input[@type='password'])[1]"
-    conform_txt_field_xpath="(//input[@type='password'])[2]"
-    select_role_xpath="(//button[@type='button'])[3]"
-    slect_option_xpath="//div[text()='Technician']"
-    create_new_user_xpath="//button[text()='Create']"
+    settings_bar_xpath = "//p[text()='Settings']"
+    user_bar_xpath = "//p[text()='User']"
+    new_user_xpath = "(//button[@type='button'])[3]"
+    first_name_xpath = "(//input[@type='text'])[1]"
+    last_name_xpath = "(//input[@type='text'])[2]"
+    username_txt_field_xpath = "(//input[@type='text'])[3]"
+    email_txt_field_xpath = "(//input[@type='text'])[4]"
+    password_txt_field_xpath = "(//input[@type='password'])[1]"
+    conform_txt_field_xpath = "(//input[@type='password'])[2]"
+    select_role_xpath = "(//button[@type='button'])[3]"
+    select_option_xpath = "//div[text()='Technician']"
+    create_new_user_xpath = "//button[text()='Create']"
 
     def __init__(self, driver):
         self.driver = driver
@@ -32,7 +32,7 @@ class Settings:
         return self.driver.find_element(By.XPATH, self.navigation_bar_xpath)
 
     def click_settings_tab(self):
-        self.driver.find_element(By.XPATH,self.settings_bar_xpath).click()
+        self.driver.find_element(By.XPATH, self.settings_bar_xpath).click()
 
     def click_user_tab(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -40,14 +40,14 @@ class Settings:
         self.driver.execute_script("arguments[0].scrollIntoView(true);", user_tab)
         user_tab.click()
 
-    def click_newuser_btn(self):
+    def click_new_user_btn(self):
         self.driver.find_element(By.XPATH, self.new_user_xpath).click()
 
-    def set_first_name(self,firstname):
-        self.driver.find_element(By.XPATH,self.first_name_xpath).send_keys(firstname)
+    def set_first_name(self, firstname):
+        self.driver.find_element(By.XPATH, self.first_name_xpath).send_keys(firstname)
 
-    def set_last_name(self,lastname):
-        self.driver.find_element(By.XPATH,self.last_name_xpath).send_keys(lastname)
+    def set_last_name(self, lastname):
+        self.driver.find_element(By.XPATH, self.last_name_xpath).send_keys(lastname)
 
     def set_username(self, username):
         self.driver.find_element(By.XPATH, self.username_txt_field_xpath).send_keys(username)
@@ -76,13 +76,13 @@ class Settings:
 
     def select_option_from_user_role(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        user_option = self.driver.find_element(By.XPATH, self.slect_option_xpath)
+        user_option = self.driver.find_element(By.XPATH, self.select_option_xpath)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", user_option)
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(user_option))
 
         # Check if the element is clickable; raise RuntimeError if it's not
         if not user_option.is_enabled() or not user_option.is_displayed():
-            raise RuntimeError(f"The user option element at {self.slect_option_xpath} is not clickable.")
+            raise RuntimeError(f"The user option element at {self.select_option_xpath} is not clickable.")
         else:
             logging.info("The user option selected")
         user_option.click()

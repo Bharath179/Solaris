@@ -14,7 +14,7 @@ class Test_Ticketing:
     password = Read_Config.get_password()
     logger = log_maker.log_gen()
 
-    def test_raise_new_ticket_issue(self,setup):
+    def test_raise_new_ticket_issue(self, setup):
         self.logger.info("Test case to raise new ticket")
         self.driver = setup
         self.driver.maximize_window()
@@ -57,7 +57,7 @@ class Test_Ticketing:
             time.sleep(2)
 
         time.sleep(5)
-        file_upload=self.ticket.click_on_attachment_field()
+        file_upload = self.ticket.click_on_attachment_field()
         if file_upload.is_displayed():
             logging.info("File has been uploaded successfully")
         else:

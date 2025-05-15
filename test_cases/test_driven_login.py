@@ -6,18 +6,17 @@ from utilities.custom_logger import log_maker
 from utilities.screenshot import ScreenshotUtil
 from utilities import Xlutility
 
-data_path="test_data/datadriven.xlsx"
+data_path = "test_data/datadriven.xlsx"
 
 
 class Test_001_login:
-    url=Read_Config.get_login_url()
-    username=Read_Config.get_username()
-    password=Read_Config.get_password()
-    logger=log_maker.log_gen()
-
+    url = Read_Config.get_login_url()
+    username = Read_Config.get_username()
+    password = Read_Config.get_password()
+    logger = log_maker.log_gen()
 
     @pytest.mark.smoke
-    def test_driven_title_verifaction(self,setup):
+    def test_driven_title_verifaction(self, setup):
         self.logger.info(f"Test case to verify the title of the webpage")
         self.driver = setup
         self.driver.maximize_window()
@@ -26,10 +25,10 @@ class Test_001_login:
         self.login = login_page(self.driver)
         time.sleep(2)
 
-        rows=Xlutility.get_cell_count(data_path,'Sheet3')
-        for row in range(2,rows+1):
-            username=Xlutility.read_data(data_path,'Sheet3',row,1)
-            password=Xlutility.read_data(data_path,'Sheet3',row,2)
+        rows = Xlutility.get_cell_count(data_path, 'Sheet3')
+        for row in range(2, rows + 1):
+            username = Xlutility.read_data(data_path, 'Sheet3', row, 1)
+            password = Xlutility.read_data(data_path, 'Sheet3', row, 2)
             self.login.set_username(username)
             time.sleep(2)
             self.login.set_password(password)
@@ -52,12 +51,12 @@ class Test_001_login:
         self.driver.quit()
 
     @pytest.mark.regression
-    def test_click_on_remember_me(self,setup):
+    def test_click_on_remember_me(self, setup):
         self.logger.info(f"Test case to click on remember me checkbox")
-        self.driver=setup
+        self.driver = setup
         self.driver.get(self.url)
         self.driver.maximize_window()
-        self.login=login_page(self.driver)
+        self.login = login_page(self.driver)
         time.sleep(2)
         remember_me_checkbox = self.login.click_remember_me()
 
