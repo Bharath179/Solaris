@@ -82,45 +82,57 @@ class Dash_board:
         return elements
 
     def get_zone_details(self, zone_name, states):
-        wait = WebDriverWait(self.driver, 10)
-
-        # Click on the zone button based on zone_name
         if zone_name.lower() == "east":
-            wait.until(EC.element_to_be_clickable((By.XPATH, self.east_zone_xpath))).click()
+            element = self.driver.find_element(By.XPATH, self.east_zone_xpath)
         elif zone_name.lower() == "north":
-            wait.until(EC.element_to_be_clickable((By.XPATH, self.north_zone_xpath))).click()
+            element = self.driver.find_element(By.XPATH, self.north_zone_xpath)
         elif zone_name.lower() == "south":
-            wait.until(EC.element_to_be_clickable((By.XPATH, self.south_zone_xpath))).click()
+            element = self.driver.find_element(By.XPATH, self.south_zone_xpath)
         elif zone_name.lower() == "west":
-            wait.until(EC.element_to_be_clickable((By.XPATH, self.west_zone_xpath))).click()
+            element = self.driver.find_element(By.XPATH, self.west_zone_xpath)
         else:
             raise ValueError(f"Zone '{zone_name}' not handled in this method")
+
+        # Scroll into view using ActionChains
+        actions = ActionChains(self.driver)
+        actions.move_to_element(element).perform()
+        element.click()
+
+        time.sleep(2)
 
         for state in states:
             # Click state
             if state.lower() == "assam":
                 self.driver.find_element(By.XPATH, self.assam_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.assam_stations_xpath)
             elif state.lower() == "manipur":
                 self.driver.find_element(By.XPATH, self.manipur_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.manipur_stations_xpath)
             elif state.lower() == "bihar":
                 self.driver.find_element(By.XPATH, self.bihar_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.bihar_stations_xpath)
             elif state.lower() == "rajasthan":
                 self.driver.find_element(By.XPATH, self.rajasthan_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.rajasthan_stations_xpath)
             elif state.lower() == "karnataka":
                 self.driver.find_element(By.XPATH, self.ka_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.ka_stations_xpath)
             elif state.lower() == "andhra pradesh":
                 self.driver.find_element(By.XPATH, self.ap_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.ap_stations_xpath)
             elif state.lower() == "gujarat":
                 self.driver.find_element(By.XPATH, self.gt_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.gt_stations_xpath)
             elif state.lower() == "maharashtra":
                 self.driver.find_element(By.XPATH, self.mh_xpath).click()
+                time.sleep(2)
                 stations = self.driver.find_elements(By.XPATH, self.mh_stations_xpath)
             else:
                 raise ValueError(f"State '{state}' not handled in this method")
