@@ -1,7 +1,11 @@
 import time
 
+from selenium.webdriver import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import logging
+
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Dash_board:
@@ -41,7 +45,7 @@ class Dash_board:
 
     table_xpath = "//table[@class='w-full caption-bottom text-sm text-center']/tbody/tr"
 
-    quick_create_xpath = "//span[text()='Quick Create']"
+    quick_create_xpath = "//button[@type='button']/descendant::span[text()='Quick Create']"
     quick_create_options_xpath = "//div[@data-side='bottom']"
 
     def __init__(self, driver):
@@ -131,7 +135,7 @@ class Dash_board:
         active_inverters = []
         inactive_inverters = []
 
-        logging.info("Reading Inverter Table:")
+        logging.info("Reading Inverter's Table:")
 
         for row in rows:
             cols = row.find_elements(By.TAG_NAME, "td")
@@ -161,5 +165,19 @@ class Dash_board:
         return active_inverters, inactive_inverters
 
     def get_quick_create(self):
-        self.driver.find_element(By.XPATH, self.quick_create_xpath).click()
-        return self.driver.find_elements(By.XPATH, self.quick_create_options_xpath)
+        wait = WebDriverWait(self.driver, 10)
+
+        # Wait for the element to be visible
+        quick_create_btn = wait.until(
+            EC.presence_of_element_located((By.XPATH, self.quick_create_xpath))
+        )
+
+        # Scroll into view and click at the center
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", quick_create_btn)
+        ActionChains(self.driver).move_to_element(quick_create_btn).click().perform()
+
+        # Wait for options to appear
+        return wait.until(
+            EC.presence_of_all_elements_located((By.XPATH, self.quick_create_options_xpath))
+        )
+

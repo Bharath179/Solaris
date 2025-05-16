@@ -34,6 +34,16 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'reports/*.html', fingerprint: true
+            
+            email_text (
+                to: 'bharathkn179@gmail.com',
+                subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
+                body: """
+                    <p>Build <b>${env.JOB_NAME} #${env.BUILD_NUMBER}</b> finished with status: <b>${currentBuild.currentResult}</b>.</p>
+                    <p>Check details at: <a href='${env.BUILD_URL}'>Build Link</a></p>
+                """,
+                mimeType: 'text/html'
+            )
         }
     }
 }

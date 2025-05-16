@@ -157,11 +157,14 @@ class Test_Dashboard:
         self.driver.maximize_window()
 
         self.dashboard = Dash_board(self.driver)
+        time.sleep(2)
         options = self.dashboard.get_quick_create()
-        for option in options:
-            self.logger.info(f"The options are:", option.text)
-        time.sleep(1)
+        if options:
+            self.logger.info(f"Total options found: {len(options)}")
+            for option in options:
+                self.logger.info(f"The option is: {option.text}")
+        else:
+            raise RuntimeError("No options found after clicking Quick Create.")
         self.driver.quit()
-
 
 

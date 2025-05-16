@@ -1,26 +1,8 @@
-2025-05-15 12:10:24 [INFO] [dashboard1] Test case to validate table and check inverter status
-2025-05-15 12:10:26 [INFO] [Dash_board] Reading Inverter Table:
-2025-05-15 12:10:26 [INFO] [Dash_board]  - Name: INV-1, Min: 22755.30, Max: 25035.40, Energy: 24592.3, Status: Active
-2025-05-15 12:10:26 [INFO] [Dash_board]  - Name: INV-2, Min: 19604.80, Max: 22059.90, Energy: 21616.2, Status: In-Active
-2025-05-15 12:10:26 [INFO] [Dash_board]  - Name: INV-3, Min: 17604.20, Max: 21977.30, Energy: 21840.8, Status: Active
-2025-05-15 12:10:27 [INFO] [Dash_board]  - Name: INV-4, Min: 22099.20, Max: 25231.60, Energy: 24057.7, Status: In-Active
-2025-05-15 12:10:27 [INFO] [Dash_board]  - Name: INV-5, Min: 17162.30, Max: 25009.50, Energy: 19749.2, Status: Active
-2025-05-15 12:10:27 [INFO] [Dash_board]  - Name: INV-6, Min: 22070.00, Max: 25200.40, Energy: 24931.2, Status: Active
-2025-05-15 12:10:27 [INFO] [Dash_board]  - Name: INV-7, Min: 22430.00, Max: 25769.30, Energy: 24770.4, Status: Active
-2025-05-15 12:10:27 [INFO] [Dash_board]  - Name: INV-8, Min: 24016.00, Max: 26860.20, Energy: 24476.6, Status: In-Active
-2025-05-15 12:10:28 [INFO] [Dash_board]  - Name: INV-9, Min: 16284.50, Max: 23259.00, Energy: 24662.4, Status: Active
-2025-05-15 12:10:28 [INFO] [Dash_board]  - Name: INV-10, Min: 21493.50, Max: 24096.10, Energy: 24374.8, Status: Active
-2025-05-15 12:10:28 [INFO] [Dash_board] 
-Active Inverters:
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-1
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-3
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-5
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-6
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-7
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-9
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-10
-2025-05-15 12:10:28 [INFO] [Dash_board] 
-In-Active Inverters:
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-2
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-4
-2025-05-15 12:10:28 [INFO] [Dash_board] - INV-8
+2025-05-16 11:02:50 [INFO] [dashboard1] Test case to verify quick create options are displaying after clicking on quick create btn
+2025-05-16 11:02:55 [INFO] [dashboard1] Total options found: 1
+2025-05-16 11:02:55 [INFO] [dashboard1] The option is: Ticketing
+Task-Management
+Inventory
+Permissions
+Roles
+User
