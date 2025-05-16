@@ -34,8 +34,8 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'reports/*.html', fingerprint: true
-            
-            email_text (
+
+            emailext (
                 to: 'bharathkn179@gmail.com',
                 subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
                 body: """

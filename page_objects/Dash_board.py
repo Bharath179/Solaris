@@ -82,19 +82,19 @@ class Dash_board:
         return elements
 
     def get_zone_details(self, zone_name, states):
+        wait = WebDriverWait(self.driver, 10)
+
         # Click on the zone button based on zone_name
         if zone_name.lower() == "east":
-            self.driver.find_element(By.XPATH, self.east_zone_xpath).click()
+            wait.until(EC.element_to_be_clickable((By.XPATH, self.east_zone_xpath))).click()
         elif zone_name.lower() == "north":
-            self.driver.find_element(By.XPATH, self.north_zone_xpath).click()
+            wait.until(EC.element_to_be_clickable((By.XPATH, self.north_zone_xpath))).click()
         elif zone_name.lower() == "south":
-            self.driver.find_element(By.XPATH, self.south_zone_xpath).click()
+            wait.until(EC.element_to_be_clickable((By.XPATH, self.south_zone_xpath))).click()
         elif zone_name.lower() == "west":
-            self.driver.find_element(By.XPATH, self.west_zone_xpath).click()
+            wait.until(EC.element_to_be_clickable((By.XPATH, self.west_zone_xpath))).click()
         else:
             raise ValueError(f"Zone '{zone_name}' not handled in this method")
-
-        time.sleep(2)
 
         for state in states:
             # Click state
