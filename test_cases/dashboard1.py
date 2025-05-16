@@ -149,3 +149,19 @@ class Test_Dashboard:
         time.sleep(2)
         self.driver.quit()
 
+    def test_quick_create_options(self, setup):
+        self.logger.info("Test case to verify quick create options are "
+                         "displaying after clicking on quick create btn")
+        self.driver = setup
+        self.driver.get(self.url)
+        self.driver.maximize_window()
+
+        self.dashboard = Dash_board(self.driver)
+        options = self.dashboard.get_quick_create()
+        for option in options:
+            self.logger.info(f"The options are:", option.text)
+        time.sleep(1)
+        self.driver.quit()
+
+
+

@@ -41,6 +41,9 @@ class Dash_board:
 
     table_xpath = "//table[@class='w-full caption-bottom text-sm text-center']/tbody/tr"
 
+    quick_create_xpath = "//span[text()='Quick Create']"
+    quick_create_options_xpath = "//div[@data-side='bottom']"
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -156,3 +159,7 @@ class Dash_board:
             logging.info(f"- {inv}")
 
         return active_inverters, inactive_inverters
+
+    def get_quick_create(self):
+        self.driver.find_element(By.XPATH, self.quick_create_xpath).click()
+        return self.driver.find_elements(By.XPATH, self.quick_create_options_xpath)
