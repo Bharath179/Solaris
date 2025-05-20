@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'venv\\Scripts\\python.exe -m pytest -s -v test_cases/dashboard1.py --browser=chrome --html=reports\\test_report.html --self-contained-html'
+                bat 'venv\\Scripts\\python.exe -m pytest -s -v test_cases/dashboard.py --browser=chrome --html=reports\\test_report.html --self-contained-html'
             }
         }
     }
