@@ -1,1 +1,19 @@
-2025-05-16 12:55:09 [INFO] [dashboard1] Test case for to test particular region
+2025-05-20 11:21:50 [INFO] [dashboard1] Test case to verify station details,generation and weather performance
+2025-05-20 11:21:52 [INFO] [dashboard1] Station Details: Active
+2025-05-20 11:21:52 [INFO] [dashboard1] SECI6000PI: 12, Baker Street, Tumkaru, Karnataka.
+2025-05-20 11:21:52 [INFO] [dashboard1] 10/01/2018: Capacity
+2025-05-20 11:21:52 [INFO] [dashboard1] 2100 MW: Potential Revenue
+2025-05-20 11:21:52 [INFO] [dashboard1] \u20b9 123.018: Losses from your site
+2025-05-20 11:21:52 [INFO] [dashboard1] \u20b9 0.6813: Generation
+2025-05-20 11:21:52 [INFO] [dashboard1] Expected: 455 kWh
+2025-05-20 11:21:52 [INFO] [dashboard1] Actual: 105 kWh
+2025-05-20 11:21:52 [INFO] [dashboard1] 23%: of expected generation
+2025-05-20 11:21:52 [INFO] [dashboard1] Weather and Performance: Co2 Reduction
+2025-05-20 11:21:52 [INFO] [dashboard1] 8.227kt: Temperature
+2025-05-20 11:21:52 [INFO] [dashboard1] 32 °C: Irradiance
+2025-05-20 11:21:52 [INFO] [dashboard1] 850 W/m²: Weather
+2025-05-20 11:21:52 [INFO] [dashboard1] Sunny: Performance Ratios
+2025-05-20 11:21:52 [INFO] [dashboard1] OPR: 0.89
+2025-05-20 11:21:52 [INFO] [dashboard1] WPR: 0.92
+2025-05-20 11:21:52 [INFO] [dashboard1] IPR: 0.95
+2025-05-20 11:21:52 [INFO] [dashboard1] ----- End of station -----

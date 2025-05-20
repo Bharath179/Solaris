@@ -167,4 +167,21 @@ class Test_Dashboard:
             raise RuntimeError("No options found after clicking Quick Create.")
         self.driver.quit()
 
+    def test_station_gen_weather_perf(self, setup):
+        self.logger.info("Test case to verify station details,"
+                         "generation and weather performance")
+        self.driver = setup
+        self.driver.get(self.url)
+        self.driver.maximize_window()
+
+        self.dashboard = Dash_board(self.driver)
+        station_gen_wea = self.dashboard.get_station_gen_wea_details()
+
+        for station_details in station_gen_wea:
+            self.logger.info(f"Station data: {station_details.text}")
+
+        # Assert we found at least one element
+        assert station_gen_wea, "No station-gen-weather elements found on the dashboard."
+        time.sleep(2)
+        self.driver.quit()
 
