@@ -31,7 +31,7 @@ class Dash_board:
     bihar_stations_xpath = "//span[text()='Bihar']/following::div[@class='pl-4 space-y-3 relative']"
     rajasthan_stations_xpath = "//span[text()='Rajasthan']/following::div[@class='pl-4 space-y-3 relative']"
 
-    south_zone_xpath = "//button[@type='button']/descendant::span[text()='South']"
+    south_zones_xpath = "//button[@type='button']/descendant::span[text()='South']"
     ka_xpath = "//button[@type='button']/descendant::span[text()='Karnataka']"
     ap_xpath = "//button[@type='button']/descendant::span[text()='Andhra Pradesh']"
     ka_stations_xpath = "//span[text()='Karnataka']/following::div[@class='pl-4 space-y-3 relative']"
@@ -89,7 +89,7 @@ class Dash_board:
         elif zone_name.lower() == "north":
             element = self.driver.find_element(By.XPATH, self.north_zone_xpath)
         elif zone_name.lower() == "south":
-            element = self.driver.find_element(By.XPATH, self.south_zone_xpath)
+            element = self.driver.find_element(By.XPATH, self.south_zones_xpath)
         elif zone_name.lower() == "west":
             element = self.driver.find_element(By.XPATH, self.west_zone_xpath)
         else:
