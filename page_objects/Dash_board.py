@@ -48,7 +48,7 @@ class Dash_board:
     quick_create_xpath = "//button[@type='button']/descendant::span[text()='Quick Create']"
     quick_create_options_xpath = "//div[@data-side='bottom']"
 
-    station_gen_wea_xpath = "//div[@class='flex flex-col lg:flex-row gap-3']"
+    station_gene_wea_xpath = "//div[@class='flex flex-col lg:flex-row gap-3']"
 
     def __init__(self, driver):
         self.driver = driver
@@ -196,4 +196,4 @@ class Dash_board:
         )
 
     def get_station_gen_wea_details(self):
-        return self.driver.find_elements(By.XPATH, self.station_gen_wea_xpath)
+        return self.driver.find_elements(By.XPATH, self.station_gene_wea_xpath)
